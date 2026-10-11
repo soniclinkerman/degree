@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Inter:wght@400;500;600&family=Lora&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <nav>
+        <div class="nav-links">
+          <div class="brand">
+            <div class="brand-mark">
+              <img class="logo" src="Brand mark.svg" alt="" />
+            </div>
+            <span class="app-name">degree</span>
+          </div>
+          <div class="tutorial-container">
+            <span class="guide-label">How to practice</span>
+          </div>
+        </div>
+      </nav>
+
+      <section class="introduction">
+        <h4 class="label">IMPROVISATION / TARGET PRACTICE</h4>
+        <h3 class="title">A little chance. A new direction.</h3>
+        <p class="content">
+          Generate scale degrees. Find them over a chord. Make them musical.
+        </p>
+      </section>
+
+      <section class="generator-settings">
+        <div class="settings-heading">
+          <h3 class="title">Set your sequence</h3>
+        </div>
+
+        <div class="sequence-length">
+          <p class="control-label">Number of targets</p>
+          <div class="length-stepper">
+            <div class="decrease">-</div>
+            <h2 id="selected_length">8</h2>
+            <div class="increase">+</div>
+          </div>
+
+          <div class="length-presets">
+            <btn class="btn-preset active">4</btn>
+            <btn class="btn-preset">8</btn>
+            <btn class="btn-preset">12</btn>
+            <btn class="btn-preset">16</btn>
+          </div>
+          <p class="length-hint">Choose a preset or set your own length.</p>
+        </div>
+
+        <hr />
+
+        <div class="blues-setting">
+          <div class="music-option">
+            <input id="blues-option" type="checkbox" />
+            <label for="blues-option" class="selected-blues-label">Blues</label>
+          </div>
+
+          <p class="blues-description">
+            Flatten 3, 5 and 7. Keep every other degree natural.
+          </p>
+
+          <div class="altered-degrees">
+            <button class="altered-degree">&#9837;3</button>
+            <button class="altered-degree">&#9837;5</button>
+            <button class="altered-degree">&#9837;7</button>
+          </div>
+        </div>
+
+        <div class="generate-action">
+          <button class="generate-btn">Generate</button>
+          <p class="random-generation-hint">
+            Random order. Repeated degrees welcome.
+          </p>
+        </div>
+      </section>
+
+      <section class="generated-sequence">
+        <div class="sequence-heading">
+          <div class="sequence-title">
+            <p class="label">YOUR TARGETS</p>
+            <p class="count">8 degrees</p>
+          </div>
+          <div class="mapping-badge">
+            <span>&#10003;</span>
+            <span>Blues on</span>
+          </div>
+        </div>
+
+        <div class="scale-degree-sequence"></div>
+
+        
+      </section>
+
+      <script src="index.js"></script>
+    </div>
+  </body>
+</html>
