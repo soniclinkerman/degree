@@ -64,6 +64,7 @@ body {
 nav {
     border-bottom: 1px solid var(--color-border);
     margin-bottom: 28px;
+    padding: 0 20px;
 }
 
 .nav-links {
@@ -201,6 +202,10 @@ nav {
     font-size: var(--size-target-count-input);
     font-weight: 400;
     color: var(--color-text-primary);
+    background-color: var(--color-surface-inset);
+    text-align: center;
+    border: none;
+    font-family: var(--font-label);
 }
 
 .length-presets {

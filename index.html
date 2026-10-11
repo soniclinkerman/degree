@@ -12,21 +12,20 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="wrapper">
-      <nav>
-        <div class="nav-links">
-          <div class="brand">
-            <div class="brand-mark">
-              <img class="logo" src="Brand mark.svg" alt="" />
-            </div>
-            <span class="app-name">degree</span>
+    <nav>
+      <div class="nav-links">
+        <div class="brand">
+          <div class="brand-mark">
+            <img class="logo" src="Brand mark.svg" alt="" />
           </div>
-          <div class="tutorial-container">
-            <span class="guide-label">How to practice</span>
-          </div>
+          <span class="app-name">degree</span>
         </div>
-      </nav>
-
+        <div class="tutorial-container">
+          <span class="guide-label">How to practice</span>
+        </div>
+      </div>
+    </nav>
+    <div class="wrapper">
       <section class="introduction">
         <h4 class="label">IMPROVISATION / TARGET PRACTICE</h4>
         <h3 class="title">A little chance. A new direction.</h3>
@@ -44,7 +43,8 @@
           <p class="control-label">Number of targets</p>
           <div class="length-stepper">
             <div class="decrease">-</div>
-            <h2 id="selected_length">8</h2>
+            <input id="selected_length" type="text" />
+            <!-- <h2 id="selected_length">8</h2> -->
             <div class="increase">+</div>
           </div>
 
@@ -97,8 +97,6 @@
         </div>
 
         <div class="scale-degree-sequence"></div>
-
-        
       </section>
 
       <script src="index.js"></script>

@@ -25,7 +25,7 @@ let selectedButton = document.querySelector(".btn-preset");
 let value = selectedButton.textContent;
 
 let mappingBadge = document.querySelector(".mapping-badge");
-length.textContent = selectedButton.textContent;
+length.value = selectedButton.textContent;
 const bluesNotes = {
   3: true,
   5: true,
@@ -43,7 +43,7 @@ increase.addEventListener("click", () => {
   if (value > MAXLENGTH) {
     value = MAXLENGTH;
   }
-  length.textContent = value;
+  length.value = value;
   removeActivePreset();
 });
 
@@ -52,14 +52,14 @@ decrease.addEventListener("click", () => {
   if (value < 1) {
     value = MINLENGTH;
   }
-  length.textContent = value;
+  length.value = value;
   removeActivePreset();
 });
 
 presetButtons.forEach((btn) => {
   btn.addEventListener("click", (e) => {
     value = Number(btn.textContent);
-    length.textContent = value;
+    length.value = value;
     btn.classList.add("active");
     selectedButton.classList.remove("active");
     selectedButton = btn;
@@ -113,12 +113,28 @@ function isNumberPresent() {}
 
 generateBtn.addEventListener("click", () => {
   let arr = [];
+  let x = 0;
+  let previousNumber;
   console.log(value);
-  for (let i = 0; i < value; i++) {
+  while (x < value) {
     let num = Math.floor(Math.random() * 7) + 1;
-    arr.push(num);
+    if (previousNumber !== num) {
+      arr.push(num);
+      x += 1;
+      previousNumber = num;
+    }
   }
   configureSetup(arr);
+});
+
+length.addEventListener("change", (e) => {
+  removeActivePreset();
+  if (Number(e.target.value) < MINLENGTH) {
+    value = MINLENGTH;
+  } else if (Number(e.target.value) > MAXLENGTH) {
+    value = MAXLENGTH;
+  }
+  length.value = value;
 });
 
 // generateBtn.addEventListener("click", () => {
